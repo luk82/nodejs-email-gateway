@@ -13,17 +13,13 @@
         var ENDPOINT = 'http://localhost:' + PORT + '/gw';
 
         function postAjax(url, data, success) {
-
             console.log(url, data, success)
-
             var params = typeof data == 'string' ? data : Object.keys(data).map(
                 function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
             ).join('&');
 
             var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-
             console.log(params);
-
             xhr.open('POST', url);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState > 3 && xhr.status == 200) { success(xhr.responseText); }
@@ -61,7 +57,6 @@
         }, false);
     });
 </script>
-
 <body>
     <p>Client example</p>
     <form name="emailForm" id="emailForm">

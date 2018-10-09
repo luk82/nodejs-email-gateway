@@ -8,8 +8,7 @@ var validator = require("validator")
 require("dotenv").config()
 
 app.set("port", process.env.PORT || 3010)
-// to support JSON-encoded bodies
-// app.use(bodyParser.json())
+
 // to support URL-encoded bodies
 app.use(
   bodyParser.urlencoded({
